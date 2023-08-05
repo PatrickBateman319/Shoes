@@ -27,7 +27,12 @@ body {
 
 /* Update the font color to black */
 .progress-bar {
-    color: black;
+    background-color: #4CAF50;
+    color: black; /* Update the font color to black */
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 0;
 }
 
 button {
