@@ -18,12 +18,13 @@ body {
 
 .progress-bar {
     background-color: #4CAF50;
-    color: black; /* Set the font color to black */
+    color: black !important;
     border-radius: 5px;
     height: 30px;
     line-height: 30px;
     width: 0;
 }
+
 
 button {
     padding: 10px 20px;
