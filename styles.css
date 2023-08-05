@@ -1,44 +1,32 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 50px;
+    margin: 30px;
 }
 
-.container {
-    max-width: 400px;
-    margin: 0 auto;
+#person-image {
+    width: 200px;
+    height: 200px;
+}
+
+#progressBar {
+    width: 300px;
+    background-color: lightgray;
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+#progressFill {
+    background-color: black;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-.hidden {
-    display: none;
-}
-
-.person-image {
-    width: 600px;
-    height: 400px;
-    margin-top: 20px;
-}
-
-/* Remove progress-bar styles */
-.progress-container {
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    display: none;
+    margin-top: 10px;
 }
 
