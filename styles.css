@@ -9,23 +9,6 @@ body {
     margin: 0 auto;
 }
 
-.progress-container {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    background-color: #4CAF50;
-    color: black !important;
-    border-radius: 5px;
-    height: 30px;
-    line-height: 30px;
-    width: 0;
-}
-
-
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -47,7 +30,15 @@ button:hover {
 .person-image {
     width: 600px;
     height: 400px;
-    /* Remove border-radius property */
-    /* border-radius: 50%; */
     margin-top: 20px;
 }
+
+/* Remove progress-bar styles */
+.progress-container {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    display: none;
+}
+
