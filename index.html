@@ -4,16 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ვაჩეს ფეხსაცმელების ფონდი</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .progress {
+            font-size: 24px;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <h1>ვაჩეს ფეხსაცმელების ფონდი</h1>
-    <img src="s-l1600.jpg" alt="Person Image" id="person-image">
-    <div id="progressBar">
-        <div id="progressFill">0/500$</div>
-    </div>
-    <button id="donateButton">Donate 0.99$</button>
+    <div class="progress" id="progress">0/500$</div>
+    <button id="donateButton" onclick="updateProgress()">Donate 0.99$</button>
+    <p id="message"></p>
+    <img src="path_to_your_image.jpg" alt="Vache's image" width="200">
+    
+    <script>
+        let currentProgress = 0;
 
-    <script src="script.js"></script>
+        function updateProgress() {
+            currentProgress += 0.99;
+            if (currentProgress >= 500) {
+                document.getElementById("progress").innerText = "500/500$";
+                document.getElementById("message").innerText = "დიდი მადლობა გაწეული სამსახურისთვის, უფალი შეგეწიოთ";
+                document.getElementById("donateButton").disabled = true;
+            } else {
+                document.getElementById("progress").innerText = currentProgress.toFixed(2) + "/500$";
+            }
+        }
+    </script>
 </body>
 </html>
