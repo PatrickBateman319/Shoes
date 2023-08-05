@@ -1,10 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f0f0f0; /* Set a light gray background color */
 }
 
 .progress {
     font-size: 24px;
     color: black;
+    background-color: #fff; /* Set a white background color for the progress text */
+    padding: 5px; /* Add some padding around the progress text */
+    display: inline-block; /* Make the progress text inline with the other elements */
 }
-
