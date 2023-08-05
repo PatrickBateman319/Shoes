@@ -1,31 +1,23 @@
-// Try to load donationAmount from localStorage
-let donationAmount = parseFloat(localStorage.getItem('donationAmount')) || 0;
-
-function donate() {
-    if (donationAmount < 500) {
-        donationAmount += 0.99;
-        // Save donationAmount to localStorage
-        localStorage.setItem('donationAmount', donationAmount);
-        updateProgressBar();
-    }
-}
+let currentAmount = 0;
+const maxAmount = 500;
 
 function updateProgressBar() {
-    const progressBar = document.getElementById('progress-bar');
-    progressBar.textContent = `${donationAmount.toFixed(2)}/500$`;
+    const progressFill = document.getElementById('progressFill');
+    progressFill.textContent = `${currentAmount.toFixed(2)}/${maxAmount}$`;
+    const progressBarWidth = (currentAmount / maxAmount) * 100;
+    progressFill.style.width = `${progressBarWidth}%`;
 
-    // Calculate and set the width of the progress bar
-    progressBar.style.width = `${(donationAmount / 500) * 100}%`;
-    
-    if (donationAmount >= 500) {
-        const thankYouMessage = document.getElementById('thank-you-message');
-        thankYouMessage.classList.remove('hidden');
+    if (currentAmount >= maxAmount) {
+        const donateButton = document.getElementById('donateButton');
+        donateButton.disabled = true;
+        progressFill.textContent = 'დიდი მადლობა გაწეული სამსახურისთვის, უფალი შეგეწიოთ';
     }
 }
 
-// Attach the donate() function to the button's onclick event
-const donateButton = document.getElementById('donate-button');
-donateButton.addEventListener('click', donate);
+document.getElementById('donateButton').addEventListener('click', () => {
+    if (currentAmount < maxAmount) {
+        currentAmount += 0.99;
+        updateProgressBar();
+    }
+});
 
-// Initialize progress bar on page load
-updateProgressBar();
